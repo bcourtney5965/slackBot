@@ -11,14 +11,13 @@ exports.postController = (req, res) => {
 };
 
 exports.hellobot = (req, res) => {
-  // var userName = req.body.user_name;
-  var channel_name = req.body.channel_name;
+  var userName = req.body.user_name;
   var botPayload = {
-    text : 'Hello, ' + channel_name + '!'
+    text : 'Hello, ' + userName + '!'
   };
 
   // avoid infinite loop
-  if (channel_name !== 'outgoing-webhook') {
+  if (userName !== 'slackbot') {
     return res.status(200).json(botPayload);
   } else {
     return res.status(200).end();
