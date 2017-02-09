@@ -12,6 +12,9 @@ exports.postController = (req, res) => {
 
 exports.hellobot = (req, res) => {
   console.log(`req.body.text = ${req.body.text}`);
+  console.log(`req.body.user_name = ${req.body.user_name}`);
+  console.log(`req.body.token = ${req.body.token}`);
+  console.log(`req.body.channel_name = ${req.body.channel_name}`);
   var userName = req.body.user_name;
   var botPayload = {
     text : 'Hello, ' + userName + '!'
