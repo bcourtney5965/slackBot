@@ -9,3 +9,17 @@ exports.postController = (req, res) => {
   console.log('inside postController');
   res.status(200).json({"inside": "postController"});
 };
+
+exports.hellobot = (req, res) => {
+  var userName = req.body.user_name;
+  var botPayload = {
+    text : 'Hello, ' + userName + '!'
+  };
+
+  // avoid infinite loop
+  if (userName !== 'slackbot') {
+    return res.status(200).json(botPayload);
+  } else {
+    return res.status(200).end();
+  }
+}

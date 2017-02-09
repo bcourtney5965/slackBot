@@ -13,7 +13,7 @@ app.use('/api', router);
 
 // Test Routes
 app.get('/test', function (req, res) { res.status(200).send('Hello world!') });
-app.post('/hello', hellobot);
+// app.post('/hello', hellobot);
 
 // error handler
 app.use(function (err, req, res, next) {
