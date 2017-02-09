@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var router = require('./routes');
-var hellobot = require('./hellobot');
+// var hellobot = require('./hellobot');
 
 app.use(express.static(path.join(__dirname, '../client')));
 
