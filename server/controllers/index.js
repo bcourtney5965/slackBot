@@ -18,7 +18,7 @@ exports.hellobot = (req, res) => {
   };
 
   // avoid infinite loop
-  if (channel_name !== 'slackbot') {
+  if (channel_name !== 'outgoing-webhook') {
     return res.status(200).json(botPayload);
   } else {
     return res.status(200).end();
