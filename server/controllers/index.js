@@ -16,14 +16,13 @@ exports.hellobot = (req, res) => {
   console.log(`req.body.token = ${req.body.token}`);
   console.log(`req.body.channel_name = ${req.body.channel_name}`);
   var userName = req.body.user_name;
-  var botPayload = {
-    text : 'Hello, ' + userName + '!'
-  };
-
-  // avoid infinite loop
-  if (userName !== 'slackbot') {
-    return res.status(200).json(botPayload);
-  } else {
-    return res.status(200).end();
-  }
+   var botPayload = {
+     text : 'Hello, ' + userName + '!'
+   }; 
+   // avoid infinite loop
+   if (userName !== 'slackbot') {
+     return res.status(200).json(botPayload);
+   } else {
+     return res.status(200).end();
+   }
 }
