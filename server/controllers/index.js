@@ -11,7 +11,7 @@ exports.postController = (req, res) => {
 };
 
 exports.hellobot = (req, res) => {
-  console.log("hello");
+  console.log(`req.body.text = ${req.body.text}`);
   var userName = req.body.user_name;
   var botPayload = {
     text : 'Hello, ' + userName + '!'
